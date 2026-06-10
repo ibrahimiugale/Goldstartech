@@ -1,0 +1,587 @@
+/* ============================================================
+   Gold Star — Service Detail Page Styling
+   ============================================================ */
+
+.service-detail-page {
+  padding: calc(var(--nav-h) + 40px) 0 120px 0;
+  min-height: 100vh;
+}
+
+.service-detail-hero {
+  padding: 40px 0;
+  border-bottom: 1px solid var(--border);
+  background-image: radial-gradient(circle at top right, rgba(201, 168, 76, 0.05) 0%, transparent 60%);
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--soft);
+  text-decoration: none;
+  transition: var(--transition);
+  margin-bottom: 24px;
+}
+
+.back-link:hover {
+  color: var(--ink);
+  transform: translateX(-4px);
+}
+
+.hero-category-row {
+  margin-bottom: 16px;
+}
+
+.service-detail-hero h1 {
+  font-size: clamp(2.5rem, 5vw, 3.8rem);
+  color: var(--ink);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.service-detail-body {
+  padding: 80px 0 0 0;
+}
+
+.service-detail-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 80px;
+  align-items: flex-start;
+}
+
+/* ── Info Column ── */
+.service-info-column h2 {
+  font-size: 1.8rem;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+
+.lead-text {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--soft);
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.body-text {
+  font-size: 1.05rem;
+  color: var(--soft);
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.bullets-section {
+  border-top: 1px solid var(--border);
+  padding-top: 36px;
+  margin-bottom: 48px;
+}
+
+.bullets-section h3 {
+  font-size: 1.35rem;
+  color: var(--ink);
+  margin-bottom: 20px;
+}
+
+.service-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.service-bullets li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--ink);
+  line-height: 1.4;
+}
+
+.service-bullets li svg {
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.service-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ── Fallback ── */
+.service-fallback-page {
+  padding: 180px 24px;
+  text-align: center;
+}
+
+.service-fallback-page h2 {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+}
+
+.service-fallback-page p {
+  color: var(--soft);
+  margin-bottom: 30px;
+}
+
+/* ────────────────────────────────────────────────────────
+   INTERACTIVE TOOL CARD
+   ──────────────────────────────────────────────────────── */
+
+.interactive-tool-card {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.tool-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  background-color: rgba(255, 255, 255, 0.01);
+}
+
+.tool-badge {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+}
+
+.tool-card-body {
+  padding: 24px;
+}
+
+.simulator-widget h4 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.tool-desc {
+  font-size: 0.85rem;
+  color: var(--soft);
+  margin-bottom: 24px;
+  line-height: 1.4;
+}
+
+/* ── 1. Funnel Simulator Styles ── */
+.sim-slider-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.slider-row {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--soft);
+}
+
+.slider-row span {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.sim-progress-track {
+  width: 100%;
+  height: 8px;
+  background-color: var(--border);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.sim-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 100%);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 0 10px rgba(201, 168, 76, 0.4);
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sim-results-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.result-box {
+  background-color: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.result-box.full-width {
+  grid-column: 1 / -1;
+  align-items: center;
+  text-align: center;
+}
+
+.box-lbl {
+  font-size: 0.75rem;
+  color: var(--soft);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.box-val {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* ── 2. Blueprint Simulator Styles ── */
+.blueprint-selector-buttons {
+  display: flex;
+  background-color: var(--bg-alt);
+  border: 1px solid var(--border);
+  padding: 4px;
+  border-radius: 8px;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+
+.blueprint-btn {
+  flex: 1;
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--soft);
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.blueprint-btn.active {
+  background-color: var(--white);
+  color: var(--gold);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.blueprint-detail-box {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.blueprint-detail-box h5 {
+  font-size: 1.05rem;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.layer-desc {
+  font-size: 0.9rem;
+  color: var(--soft);
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.stack-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.stack-tag {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 4px 10px;
+  background-color: rgba(201, 168, 76, 0.08);
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  color: var(--gold);
+  border-radius: var(--radius-pill);
+}
+
+.blueprint-terminal {
+  background-color: #050508;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.blueprint-terminal pre {
+  margin: 0;
+}
+
+.blueprint-terminal code {
+  font-family: monospace;
+  font-size: 0.76rem;
+  line-height: 1.6;
+  color: #8E8E9A;
+  white-space: pre-wrap;
+  display: block;
+}
+
+/* ── 3. AI Workflow Parser Styles ── */
+.agent-template-selector {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.agent-tab-btn {
+  background-color: var(--bg-alt);
+  border: 1px solid var(--border);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--soft);
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.agent-tab-btn.active {
+  background-color: rgba(201, 168, 76, 0.1);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.agent-mock-brief {
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+.brief-input-box {
+  background-color: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: var(--ink);
+}
+
+.agent-console {
+  background-color: #050508;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px;
+  min-height: 140px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.console-empty {
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: #555562;
+  margin: auto;
+}
+
+.console-lines {
+  font-family: monospace;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: #ABB2BF;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.console-line-item {
+  animation: log-fade 0.2s ease forwards;
+}
+
+.payload-box {
+  background-color: #0c0c12;
+  border: 1px solid #1c1c24;
+  border-radius: 4px;
+  padding: 8px;
+  margin-top: 8px;
+}
+
+.payload-box code {
+  color: #98C379;
+}
+
+.btn-agent-run {
+  width: 100%;
+  background-color: rgba(201, 168, 76, 0.1);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  color: var(--gold);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-agent-run:hover:not(:disabled) {
+  background-color: var(--gold);
+  color: var(--bg);
+  box-shadow: 0 0 12px rgba(201, 168, 76, 0.3);
+}
+
+.btn-agent-run:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── 4. Web Design Grid Customizer Styles ── */
+.design-customizer-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.controls-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.controls-group label {
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--soft);
+}
+
+.control-pills {
+  display: flex;
+  gap: 6px;
+}
+
+.ctrl-pill {
+  background-color: var(--bg-alt);
+  border: 1px solid var(--border);
+  color: var(--soft);
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.ctrl-pill:hover {
+  color: var(--ink);
+}
+
+.ctrl-pill.active {
+  background-color: var(--white);
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+.design-sim-viewport-wrapper {
+  background-color: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px;
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.viewport-card-sim {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: left;
+}
+
+.viewport-card-sim.desktop { width: 100%; }
+.viewport-card-sim.tablet { width: 75%; }
+.viewport-card-sim.mobile { width: 50%; }
+
+.sim-layout-heading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.sim-layout-bar {
+  width: 40%;
+  height: 4px;
+  background-color: var(--gold);
+  border-radius: 2px;
+}
+
+.sim-layout-grid-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+  gap: 8px;
+}
+
+.sim-grid-col {
+  background-color: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 6px;
+  font-size: 0.72rem;
+  text-align: center;
+  color: var(--soft);
+}
+
+/* ============================================================
+   Media Queries & Responsiveness
+   ============================================================ */
+
+@media (max-width: 992px) {
+  .service-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+@media (max-width: 576px) {
+  .service-detail-hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .sim-results-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .result-box.full-width {
+    grid-column: span 1;
+  }
+}

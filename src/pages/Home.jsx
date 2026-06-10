@@ -662,7 +662,7 @@ export default function Home() {
               </div>
               <h3>Digital Marketing</h3>
               <p>Data-driven performance campaigns that acquire and retain users at scale.</p>
-              <Link to="/services#digital-marketing" className="service-link">
+              <Link to="/services/digital-marketing" className="service-link">
                 Learn more <ArrowRight size={14} />
               </Link>
             </div>
@@ -673,8 +673,8 @@ export default function Home() {
                 <Code size={24} color="var(--gold)" />
               </div>
               <h3>Software Development</h3>
-              <p>Robust enterprise web applications, mobile apps, and custom platforms.</p>
-              <Link to="/services#software-dev" className="service-link">
+              <p>Robust enterprise web applications, web backends, and databases.</p>
+              <Link to="/services/software-development" className="service-link">
                 Learn more <ArrowRight size={14} />
               </Link>
             </div>
@@ -686,7 +686,7 @@ export default function Home() {
               </div>
               <h3>AI Automation</h3>
               <p>Intelligent agent workflows and integrations that optimize operation costs.</p>
-              <Link to="/services#ai-automation" className="service-link">
+              <Link to="/services/ai-automation" className="service-link">
                 Learn more <ArrowRight size={14} />
               </Link>
             </div>
@@ -698,7 +698,7 @@ export default function Home() {
               </div>
               <h3>Web Design</h3>
               <p>Highly aesthetic interactive websites crafted to capture conversion leads.</p>
-              <Link to="/services#web-design" className="service-link">
+              <Link to="/services/web-design" className="service-link">
                 Learn more <ArrowRight size={14} />
               </Link>
             </div>

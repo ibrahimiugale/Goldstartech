@@ -84,10 +84,10 @@ export default function Navbar() {
             
             {isDropdownOpen && (
               <div className="nav-dropdown-menu">
-                <Link to="/services#digital-marketing" className="dropdown-item">Digital Marketing</Link>
-                <Link to="/services#software-dev" className="dropdown-item">Software Development</Link>
-                <Link to="/services#ai-automation" className="dropdown-item">AI Automation</Link>
-                <Link to="/services#web-design" className="dropdown-item">Web Design</Link>
+                <Link to="/services/digital-marketing" className="dropdown-item">Digital Marketing</Link>
+                <Link to="/services/software-development" className="dropdown-item">Software Development</Link>
+                <Link to="/services/ai-automation" className="dropdown-item">AI Automation</Link>
+                <Link to="/services/web-design" className="dropdown-item">Web Design</Link>
                 <hr className="dropdown-divider" />
                 <Link to="/services" className="dropdown-item view-all-link">View All Services</Link>
               </div>
@@ -124,10 +124,10 @@ export default function Navbar() {
             <div className="mobile-sub-group">
               <span className="mobile-sub-title">Services</span>
               <div className="mobile-sub-links">
-                <Link to="/services#digital-marketing" className="mobile-sub-link" onClick={() => setIsMobileOpen(false)}>Digital Marketing</Link>
-                <Link to="/services#software-dev" className="mobile-sub-link" onClick={() => setIsMobileOpen(false)}>Software Development</Link>
-                <Link to="/services#ai-automation" className="mobile-sub-link" onClick={() => setIsMobileOpen(false)}>AI Automation</Link>
-                <Link to="/services#web-design" className="mobile-sub-link" onClick={() => setIsMobileOpen(false)}>Web Design</Link>
+                <Link to="/services/digital-marketing" className="mobile-sub-link" onClick={() => setIsMobileOpen(false)}>Digital Marketing</Link>
+                <Link to="/services/software-development" className="mobile-sub-link" onClick={() => setIsMobileOpen(false)}>Software Development</Link>
+                <Link to="/services/ai-automation" className="mobile-sub-link" onClick={() => setIsMobileOpen(false)}>AI Automation</Link>
+                <Link to="/services/web-design" className="mobile-sub-link" onClick={() => setIsMobileOpen(false)}>Web Design</Link>
               </div>
             </div>
 
