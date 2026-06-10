@@ -4,6 +4,13 @@ import { Megaphone, Code, Cpu, Layers, CheckCircle, Search } from 'lucide-react'
 import useReveal from '../utils/useReveal';
 import './Services.css';
 
+// Original service graphics
+import serviceMarketingImg from '../assets/service_marketing.png';
+import serviceSoftwareImg from '../assets/service_software.png';
+import serviceAiAutomationImg from '../assets/service_ai_automation.png';
+import serviceDesignImg from '../assets/service_design.png';
+import serviceAiSearchImg from '../assets/service_ai_search.png';
+
 export default function Services() {
   useReveal();
 
@@ -12,6 +19,7 @@ export default function Services() {
       id: 'digital-marketing',
       icon: <Megaphone size={20} color="var(--gold)" />,
       tag: 'Digital Marketing',
+      image: serviceMarketingImg,
       title: 'Drive pipeline growth.',
       desc: 'We structure performance campaigns that turn visibility into measurable client revenue. By using advanced tracking systems, we capture and optimize customer acquisition costs.',
       bullets: [
@@ -25,6 +33,7 @@ export default function Services() {
       id: 'software-development',
       icon: <Code size={20} color="var(--gold)" />,
       tag: 'Software Development',
+      image: serviceSoftwareImg,
       title: 'Build solid software.',
       desc: 'Our engineering team designs enterprise web applications, web backends, and databases. We write clean, tested React and Node.js source code built to scale infinitely.',
       bullets: [
@@ -38,6 +47,7 @@ export default function Services() {
       id: 'ai-automation',
       icon: <Cpu size={20} color="var(--gold)" />,
       tag: 'AI Automation',
+      image: serviceAiAutomationImg,
       title: 'Optimize operational speed.',
       desc: 'Deploy custom AI agents and automation scripts that streamline manual human workflows. We integrate state-of-the-art language models with your active business data.',
       bullets: [
@@ -51,6 +61,7 @@ export default function Services() {
       id: 'web-design',
       icon: <Layers size={20} color="var(--gold)" />,
       tag: 'Web Design',
+      image: serviceDesignImg,
       title: 'Stun visual visitors.',
       desc: 'Craft premium interactive digital interfaces designed to express authority. We apply editorial layout systems, CSS glassmorphism, and responsive web aesthetics.',
       bullets: [
@@ -64,6 +75,7 @@ export default function Services() {
       id: 'ai-search-aeo-geo',
       icon: <Search size={20} color="var(--gold)" />,
       tag: 'AI Search (AEO/GEO)',
+      image: serviceAiSearchImg,
       title: 'Rank in AI search engines.',
       desc: 'Optimize your digital content schema and authority signals to rank in conversational results on ChatGPT, Gemini, and Perplexity.',
       bullets: [
@@ -101,6 +113,7 @@ export default function Services() {
                 {/* Visual Block (Left or Right depending on index) */}
                 <div className="services-detail-visual">
                   <div className="services-visual-card">
+                    <img src={s.image} alt={s.tag} className="services-visual-img" />
                     <div className="services-visual-accent"></div>
                     <div className="services-visual-number">0{idx + 1}</div>
                   </div>

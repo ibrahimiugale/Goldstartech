@@ -335,6 +335,15 @@ export default function Home() {
       <section ref={heroRef} className="hero-section">
         {/* Ambient interactive background canvas & glow */}
         <div className="hero-bg-visual-wrapper">
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline 
+            className="hero-bg-video"
+          >
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-glowing-dots-and-lines-network-41949-large.mp4" type="video/mp4" />
+          </video>
           <canvas ref={canvasRef} className="hero-bg-canvas"></canvas>
           <div ref={bgGlowRef} className="hero-bg-glow-blob"></div>
         </div>
