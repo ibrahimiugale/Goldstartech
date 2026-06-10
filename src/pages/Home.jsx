@@ -28,8 +28,6 @@ export default function Home() {
   const [pipelineLog, setPipelineLog] = useState("Ready to process briefs.");
 
   const heroRef = useRef(null);
-  const bgGlowRef = useRef(null);
-  const canvasRef = useRef(null);
 
   const heroBadgeRef = useRef(null);
   const heroTitleRef = useRef(null);
@@ -56,172 +54,7 @@ export default function Home() {
       .fromTo(heroConsoleRef.current, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.8 }, '-=0.45');
   }, []);
 
-  // Smooth cursor-following ambient gold aura
-  useEffect(() => {
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) return;
 
-    const hero = heroRef.current;
-    const glow = bgGlowRef.current;
-    if (!hero || !glow) return;
-
-    const handleMouseMove = (e) => {
-      const rect = hero.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-
-      // Smooth lag interpolation
-      gsap.to(glow, {
-        x: x - 180, // Offset half of glow size (360/2)
-        y: y - 180,
-        duration: 1.2,
-        ease: 'power2.out'
-      });
-    };
-
-    hero.addEventListener('mousemove', handleMouseMove);
-    return () => hero.removeEventListener('mousemove', handleMouseMove);
-  }, []);
-
-  // Canvas Interactive Background Particle Effect
-  useEffect(() => {
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) return;
-
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    let animationFrameId;
-    let width = (canvas.width = canvas.offsetWidth);
-    let height = (canvas.height = canvas.offsetHeight);
-
-    const handleResize = () => {
-      if (!canvas) return;
-      width = canvas.width = canvas.offsetWidth;
-      height = canvas.height = canvas.offsetHeight;
-    };
-    window.addEventListener('resize', handleResize);
-
-    const particles = [];
-    const particleCount = Math.min(65, Math.floor((width * height) / 14000));
-
-    for (let i = 0; i < particleCount; i++) {
-      particles.push({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.7,
-        vy: (Math.random() - 0.5) * 0.7,
-        radius: Math.random() * 2 + 1,
-        alpha: Math.random() * 0.4 + 0.2
-      });
-    }
-
-    let mouse = { x: null, y: null };
-
-    const handleMouseMove = (e) => {
-      const rect = canvas.getBoundingClientRect();
-      mouse.x = e.clientX - rect.left;
-      mouse.y = e.clientY - rect.top;
-    };
-
-    const handleMouseLeave = () => {
-      mouse.x = null;
-      mouse.y = null;
-    };
-
-    const hero = heroRef.current;
-    if (hero) {
-      hero.addEventListener('mousemove', handleMouseMove);
-      hero.addEventListener('mouseleave', handleMouseLeave);
-    }
-
-    const draw = () => {
-      ctx.clearRect(0, 0, width, height);
-
-      // Update and draw particles
-      particles.forEach((p) => {
-        p.x += p.vx;
-        p.y += p.vy;
-
-        // Wall collisions
-        if (p.x < 0 || p.x > width) p.vx *= -1;
-        if (p.y < 0 || p.y > height) p.vy *= -1;
-
-        // Push away from mouse
-        if (mouse.x !== null && mouse.y !== null) {
-          const dx = p.x - mouse.x;
-          const dy = p.y - mouse.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 120) {
-            const force = (120 - dist) / 120;
-            const angle = Math.atan2(dy, dx);
-            p.x += Math.cos(angle) * force * 1.5;
-            p.y += Math.sin(angle) * force * 1.5;
-          }
-        }
-
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(201, 168, 76, ${p.alpha})`;
-        ctx.fill();
-      });
-
-      // Draw connection lines between nearby particles
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const p1 = particles[i];
-          const p2 = particles[j];
-          const dx = p1.x - p2.x;
-          const dy = p1.y - p2.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-
-          if (dist < 90) {
-            const opacity = ((90 - dist) / 90) * 0.15;
-            ctx.beginPath();
-            ctx.moveTo(p1.x, p1.y);
-            ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(201, 168, 76, ${opacity})`;
-            ctx.lineWidth = 0.5;
-            ctx.stroke();
-          }
-        }
-      }
-
-      // Draw connection lines to mouse
-      if (mouse.x !== null && mouse.y !== null) {
-        particles.forEach((p) => {
-          const dx = p.x - mouse.x;
-          const dy = p.y - mouse.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-
-          if (dist < 160) {
-            const opacity = ((160 - dist) / 160) * 0.22;
-            ctx.beginPath();
-            ctx.moveTo(p.x, p.y);
-            ctx.lineTo(mouse.x, mouse.y);
-            ctx.strokeStyle = `rgba(201, 168, 76, ${opacity})`;
-            ctx.lineWidth = 0.7;
-            ctx.stroke();
-          }
-        });
-      }
-
-      animationFrameId = requestAnimationFrame(draw);
-    };
-
-    draw();
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      if (hero) {
-        hero.removeEventListener('mousemove', handleMouseMove);
-        hero.removeEventListener('mouseleave', handleMouseLeave);
-      }
-      cancelAnimationFrame(animationFrameId);
-    };
-  }, []);
 
   // Stats Count-Up Scroll-Triggered Animation
   useEffect(() => {
@@ -334,20 +167,6 @@ export default function Home() {
     <div className="home-page">
       {/* ── HERO SECTION ── */}
       <section ref={heroRef} className="hero-section">
-        {/* Ambient interactive background canvas & glow */}
-        <div className="hero-bg-visual-wrapper">
-          <video 
-            autoPlay 
-            muted 
-            loop 
-            playsInline 
-            className="hero-bg-video"
-          >
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-glowing-dots-and-lines-network-41949-large.mp4" type="video/mp4" />
-          </video>
-          <canvas ref={canvasRef} className="hero-bg-canvas"></canvas>
-          <div ref={bgGlowRef} className="hero-bg-glow-blob"></div>
-        </div>
 
         <div className="container hero-container">
           <div className="hero-info">

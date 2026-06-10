@@ -3,6 +3,7 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import GlobalBackground from './components/GlobalBackground';
 
 // Page imports
 import Home from './pages/Home';
@@ -20,6 +21,9 @@ export default function App() {
     <Router>
       {/* Scroll controller to reset window scrolls and handle hash anchors */}
       <ScrollToTop />
+      
+      {/* Persistent interactive canvas and tech background video globally */}
+      <GlobalBackground />
       
       {/* Shared Navbar Layout */}
       <Navbar />
