@@ -47,6 +47,7 @@ export default function Footer() {
             <li><Link to="/services/software-development">Software Development</Link></li>
             <li><Link to="/services/ai-automation">AI Automation</Link></li>
             <li><Link to="/services/web-design">Web Design</Link></li>
+            <li><Link to="/services/ai-search-aeo-geo">AI Search (AEO/GEO)</Link></li>
           </ul>
         </div>
 

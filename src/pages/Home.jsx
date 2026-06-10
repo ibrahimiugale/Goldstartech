@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { Megaphone, Code, Cpu, Layers, ArrowRight, Award, CheckCircle, TrendingUp, Users, Play, Settings, RefreshCw } from 'lucide-react';
+import { Megaphone, Code, Cpu, Layers, ArrowRight, Award, CheckCircle, TrendingUp, Users, Play, Settings, RefreshCw, Search } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import useReveal from '../utils/useReveal';
@@ -699,6 +699,18 @@ export default function Home() {
               <h3>Web Design</h3>
               <p>Highly aesthetic interactive websites crafted to capture conversion leads.</p>
               <Link to="/services/web-design" className="service-link">
+                Learn more <ArrowRight size={14} />
+              </Link>
+            </div>
+
+            {/* Card 5 */}
+            <div className="service-card stagger-item">
+              <div className="service-icon-wrapper">
+                <Search size={24} color="var(--gold)" />
+              </div>
+              <h3>AI Search (AEO/GEO)</h3>
+              <p>Optimize web architecture and citations to rank in ChatGPT and Perplexity.</p>
+              <Link to="/services/ai-search-aeo-geo" className="service-link">
                 Learn more <ArrowRight size={14} />
               </Link>
             </div>

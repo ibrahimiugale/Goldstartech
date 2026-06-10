@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Megaphone, Code, Cpu, Layers, CheckCircle } from 'lucide-react';
+import { Megaphone, Code, Cpu, Layers, CheckCircle, Search } from 'lucide-react';
 import useReveal from '../utils/useReveal';
 import './Services.css';
 
@@ -22,7 +22,7 @@ export default function Services() {
       ]
     },
     {
-      id: 'software-dev',
+      id: 'software-development',
       icon: <Code size={20} color="var(--gold)" />,
       tag: 'Software Development',
       title: 'Build solid software.',
@@ -58,6 +58,19 @@ export default function Services() {
         'Dynamic interactive visual prototypes.',
         'Responsive layout scaling tests.',
         'Optimized organic site conversions.'
+      ]
+    },
+    {
+      id: 'ai-search-aeo-geo',
+      icon: <Search size={20} color="var(--gold)" />,
+      tag: 'AI Search (AEO/GEO)',
+      title: 'Rank in AI search engines.',
+      desc: 'Optimize your digital content schema and authority signals to rank in conversational results on ChatGPT, Gemini, and Perplexity.',
+      bullets: [
+        'Semantic JSON-LD structure auditing.',
+        'robots.txt & LLM crawler optimization.',
+        'Entity citation index building.',
+        'Conversational search visibility tracking.'
       ]
     }
   ];
@@ -111,7 +124,10 @@ export default function Services() {
                       </li>
                     ))}
                   </ul>
-                  <Link to="/contact" className="btn btn-outline btn-sm">Get started</Link>
+                  <div className="services-detail-actions">
+                    <Link to={`/services/${s.id}`} className="btn btn-primary btn-sm">Explore service</Link>
+                    <Link to="/contact" className="btn btn-outline btn-sm">Get started</Link>
+                  </div>
                 </div>
               </div>
             ))}

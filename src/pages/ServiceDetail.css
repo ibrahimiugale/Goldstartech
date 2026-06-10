@@ -561,6 +561,110 @@
   color: var(--soft);
 }
 
+/* ── 5. AI Search & Citation Auditor Styles ── */
+.auditor-input-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.auditor-text-input {
+  flex-grow: 1;
+  background-color: var(--bg-alt);
+  border: 1px solid var(--border);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  padding: 10px 14px;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color var(--transition);
+}
+
+.auditor-text-input:focus {
+  border-color: var(--gold);
+}
+
+.btn-auditor-trigger {
+  background-color: rgba(201, 168, 76, 0.1);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  color: var(--gold);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: var(--transition);
+}
+
+.btn-auditor-trigger:hover:not(:disabled) {
+  background-color: var(--gold);
+  color: var(--bg);
+  box-shadow: 0 0 12px rgba(201, 168, 76, 0.3);
+}
+
+.btn-auditor-trigger:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.auditor-logs-terminal {
+  background-color: #050508;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+}
+
+.audit-results-report {
+  border-top: 1px solid #1E1E26;
+  padding-top: 14px;
+  margin-top: 14px;
+  text-align: left;
+  animation: log-fade 0.2s ease forwards;
+}
+
+.audit-results-report h5 {
+  font-size: 0.9rem;
+  color: var(--ink);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.report-metric-row {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  padding: 6px 0;
+  border-bottom: 1px solid #101015;
+}
+
+.report-metric-row:last-child {
+  border-bottom: none;
+}
+
+.report-metric-row.highlight-row {
+  background-color: rgba(201, 168, 76, 0.03);
+  padding: 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  border: 1px dashed rgba(201, 168, 76, 0.15);
+}
+
+.metric-lbl {
+  color: #8E8E9A;
+}
+
+.metric-val {
+  color: var(--ink);
+}
+
 /* ============================================================
    Media Queries & Responsiveness
    ============================================================ */

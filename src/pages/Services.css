@@ -176,6 +176,12 @@
 }
 
 /* ── Responsive Spacing ── */
+.services-detail-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
 @media (max-width: 900px) {
   .services-detail-item {
     grid-template-columns: 1fr;

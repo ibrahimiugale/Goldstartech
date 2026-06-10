@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Megaphone, Code, Cpu, Layers, CheckCircle, ArrowLeft, Play, Settings, RefreshCw } from 'lucide-react';
+import { Megaphone, Code, Cpu, Layers, CheckCircle, ArrowLeft, Play, Settings, RefreshCw, Search } from 'lucide-react';
 import useReveal from '../utils/useReveal';
 import './ServiceDetail.css';
 
@@ -61,6 +61,20 @@ const servicesData = {
       'Conversion-centered lead landing pages.'
     ],
     accent: '#E6C2B4'
+  },
+  'ai-search-aeo-geo': {
+    icon: <Search size={24} color="var(--gold)" />,
+    tag: 'AI Search (AEO/GEO)',
+    title: 'Rank in AI search engines.',
+    desc: 'Optimize your digital content schema and authority signals to rank in conversational results on ChatGPT, Gemini, and Perplexity.',
+    detailed: 'AI Search Optimization (AEO/GEO) is the next evolution of search engine optimization. Instead of indexing for keywords, we structure your site data, citations, and authority footprints so that large language models cite your brand as the leading solution in conversational answers.',
+    bullets: [
+      'JSON-LD semantic schema structure optimization.',
+      'LLM crawler validation and index audits.',
+      'Conversational authority footprint citations building.',
+      'Generative engine citation rate tracking.'
+    ],
+    accent: '#C9A84C'
   }
 };
 
@@ -143,6 +157,7 @@ export default function ServiceDetail() {
                 {serviceId === 'software-development' && <SoftwareBlueprint />}
                 {serviceId === 'ai-automation' && <AIWorkflowParser />}
                 {serviceId === 'web-design' && <WebDesignGridCustomizer />}
+                {serviceId === 'ai-search-aeo-geo' && <AISearchAuditor />}
               </div>
             </div>
           </div>
@@ -462,6 +477,105 @@ function WebDesignGridCustomizer() {
             {viewport === 'desktop' && <span className="sim-grid-col">Col 3</span>}
           </div>
         </div>
+      </div>
+    </div>
+  );
+}
+
+// 5. AI Search & Citation Auditor
+function AISearchAuditor() {
+  const [urlInput, setUrlInput] = useState('');
+  const [scanning, setScanning] = useState(false);
+  const [auditLogs, setAuditLogs] = useState([]);
+  const [auditReport, setAuditReport] = useState(null);
+
+  const runAudit = (e) => {
+    e.preventDefault();
+    if (!urlInput.trim() || scanning) return;
+    setScanning(true);
+    setAuditLogs([]);
+    setAuditReport(null);
+
+    const steps = [
+      `⌛ Initializing semantic scan for: ${urlInput}...`,
+      "⌛ Checking LLM crawler permissions in robots.txt...",
+      "⌛ Crawling semantic JSON-LD structures and entity microdata...",
+      "⌛ Matching entity citations across Wikipedia, GitHub, and PR index wires...",
+      "⌛ Calculating conversational generation weight on Gemini and ChatGPT...",
+      "✔ Audit scan completed successfully!"
+    ];
+
+    steps.forEach((step, idx) => {
+      setTimeout(() => {
+        setAuditLogs((prev) => [...prev, step]);
+        if (idx === steps.length - 1) {
+          setAuditReport({
+            crawlers: 'ALLOWED (100/100)',
+            schemaScore: '82/100 (Missing local entity markup)',
+            citationAuthority: '64/100 (Faint reference backlinks)',
+            aiVisibilityRank: 'HIGH PRIORITY (Estimated 38% citation weight)'
+          });
+          setScanning(false);
+        }
+      }, (idx + 1) * 500);
+    });
+  };
+
+  return (
+    <div className="simulator-widget auditor-widget">
+      <h4>AEO Indexing Auditor</h4>
+      <p className="tool-desc">Enter a domain URL to run a semantic indexability scan for large language models.</p>
+
+      <form className="auditor-input-form" onSubmit={runAudit}>
+        <input 
+          type="text" 
+          placeholder="https://yourcompany.com" 
+          value={urlInput}
+          onChange={(e) => setUrlInput(e.target.value)}
+          disabled={scanning}
+          className="auditor-text-input"
+          required
+        />
+        <button 
+          type="submit" 
+          className="btn-auditor-trigger"
+          disabled={scanning}
+        >
+          {scanning ? 'Auditing...' : 'Analyze Indexability'}
+        </button>
+      </form>
+
+      <div className="auditor-logs-terminal">
+        {auditLogs.length === 0 ? (
+          <div className="console-empty">Enter URL and trigger scan.</div>
+        ) : (
+          <div className="console-lines">
+            {auditLogs.map((l, i) => (
+              <div key={i} className="console-line-item">{l}</div>
+            ))}
+            {auditReport && (
+              <div className="audit-results-report">
+                <h5>LLM Auditing Scorecard</h5>
+                <div className="report-metric-row">
+                  <span className="metric-lbl">LLM Crawl Status</span>
+                  <span className="metric-val">{auditReport.crawlers}</span>
+                </div>
+                <div className="report-metric-row">
+                  <span className="metric-lbl">JSON-LD Schema Score</span>
+                  <span className="metric-val">{auditReport.schemaScore}</span>
+                </div>
+                <div className="report-metric-row">
+                  <span className="metric-lbl">Citation Network Score</span>
+                  <span className="metric-val">{auditReport.citationAuthority}</span>
+                </div>
+                <div className="report-metric-row highlight-row">
+                  <span className="metric-lbl">AI Citation Visibility</span>
+                  <span className="metric-val gold-text">{auditReport.aiVisibilityRank}</span>
+                </div>
+              </div>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );

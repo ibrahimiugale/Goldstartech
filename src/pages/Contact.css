@@ -231,6 +231,480 @@
   padding-top: 24px;
 }
 
+/* ── Tabs Controls ── */
+.contact-tabs {
+  display: flex;
+  gap: 16px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+
+.contact-tab-btn {
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--soft);
+  cursor: pointer;
+  padding: 8px 16px;
+  position: relative;
+  transition: color var(--transition);
+}
+
+.contact-tab-btn:hover {
+  color: var(--ink);
+}
+
+.contact-tab-btn.active {
+  color: var(--gold);
+}
+
+.contact-tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -17px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--gold);
+  box-shadow: 0 0 10px var(--gold);
+}
+
+/* ── Step Indicators ── */
+.step-indicators-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  padding: 0 16px;
+}
+
+.step-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  background-color: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--soft);
+  transition: var(--transition);
+  position: relative;
+  z-index: 2;
+}
+
+.step-dot.active {
+  border-color: var(--gold);
+  color: var(--gold);
+  box-shadow: 0 0 12px rgba(201, 168, 76, 0.25);
+  background-color: var(--white);
+}
+
+.step-line {
+  flex: 1;
+  height: 2px;
+  background-color: var(--border);
+  margin: 0 8px;
+  transition: var(--transition);
+  position: relative;
+  z-index: 1;
+}
+
+.step-line.active {
+  background-color: var(--gold);
+  box-shadow: 0 0 4px var(--gold);
+}
+
+/* ── Wizard Panes ── */
+.ai-proposal-wizard h4 {
+  font-size: 1.35rem;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+
+.ai-step-desc {
+  font-size: 0.9rem;
+  color: var(--soft);
+  margin-bottom: 24px;
+}
+
+.ai-step-desc.font-sm {
+  font-size: 0.82rem;
+}
+
+.ai-step-pane {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.ai-actions-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+/* ── Form Option Toggles & Check-pills ── */
+.option-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.option-btn {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--ink);
+  background-color: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.option-btn:hover {
+  border-color: var(--soft);
+}
+
+.option-btn.active {
+  border-color: var(--gold);
+  background-color: rgba(201, 168, 76, 0.08);
+  box-shadow: 0 0 10px rgba(201, 168, 76, 0.1);
+  color: var(--gold);
+}
+
+.features-checkbox-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.feature-pill-btn {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--soft);
+  background-color: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 8px 16px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition);
+}
+
+.feature-pill-btn:hover {
+  border-color: var(--soft);
+  color: var(--ink);
+}
+
+.feature-pill-btn .pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--border);
+  transition: var(--transition);
+}
+
+.feature-pill-btn.active {
+  color: var(--gold);
+  border-color: var(--gold);
+  background-color: rgba(201, 168, 76, 0.06);
+}
+
+.feature-pill-btn.active .pill-dot {
+  background-color: var(--gold);
+  box-shadow: 0 0 8px var(--gold);
+}
+
+/* ── Sliders ── */
+.slider-group {
+  margin-bottom: 8px;
+}
+
+.slider-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.slider-val {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.slider-limits {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: var(--soft);
+  margin-top: 4px;
+}
+
+/* ── Scoping Console / Terminal ── */
+.scoping-terminal {
+  border: 1px solid var(--border);
+  background-color: #030305 !important;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  font-family: monospace;
+}
+
+.scoping-terminal .console-header {
+  border-bottom: 1px solid #14141d;
+  background-color: #09090f;
+  padding: 10px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.terminal-title {
+  font-size: 0.8rem;
+  color: var(--soft);
+  font-weight: 500;
+}
+
+.terminal-logs-body {
+  padding: 18px;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+}
+
+.terminal-log-line {
+  font-size: 0.82rem;
+  color: var(--soft);
+  line-height: 1.4;
+  white-space: pre-wrap;
+  word-break: break-all;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.terminal-log-line.success {
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.terminal-cursor-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.terminal-spinner {
+  color: var(--gold);
+  animation: spin 1s linear infinite;
+  display: inline-block;
+}
+
+.terminal-text {
+  color: var(--ink);
+  animation: pulse-terminal 1.2s ease-in-out infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse-terminal {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.ai-scoping-loading h4 {
+  animation: pulse-terminal 1.5s ease-in-out infinite;
+}
+
+/* ── Blueprint Proposal Details Card ── */
+.blueprint-details-card {
+  border: 1px solid var(--gold);
+  background: linear-gradient(145deg, #09090e, #0e0e16);
+  border-radius: 8px;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.blueprint-details-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: var(--gold);
+  box-shadow: 0 0 12px var(--gold);
+}
+
+.blueprint-header-stamp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dashed rgba(201, 168, 76, 0.2);
+  padding-bottom: 12px;
+  margin-bottom: 18px;
+}
+
+.stamp-title {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.08em;
+}
+
+.stamp-id {
+  font-family: monospace;
+  font-size: 0.72rem;
+  color: var(--soft);
+}
+
+.blueprint-summary-metrics {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.metric-box {
+  background-color: rgba(201, 168, 76, 0.03);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.metric-lbl {
+  font-size: 0.65rem;
+  color: var(--soft);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.metric-val {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.metric-val.glow-text {
+  font-size: 1.6rem;
+  color: var(--gold);
+  text-shadow: 0 0 8px rgba(201, 168, 76, 0.2);
+}
+
+.warning-badge {
+  font-size: 0.65rem;
+  color: #c9a84c;
+  background-color: rgba(201, 168, 76, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-top: 4px;
+  width: max-content;
+  font-weight: 500;
+}
+
+.blueprint-meta-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.meta-item strong {
+  font-size: 0.85rem;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.tech-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tech-tag {
+  font-size: 0.72rem;
+  font-weight: 500;
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--soft);
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.sprint-plan-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sprint-plan-box strong {
+  font-size: 0.85rem;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.sprint-roadmap-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sprint-roadmap-list li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.sprint-num {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--gold);
+  background-color: rgba(201, 168, 76, 0.08);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+.sprint-desc {
+  font-size: 0.8rem;
+  color: var(--soft);
+  line-height: 1.4;
+  flex: 1;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .contact-container {
@@ -242,5 +716,11 @@
 @media (max-width: 480px) {
   .contact-form-col {
     padding: 32px 24px;
+  }
+  .option-grid {
+    grid-template-columns: 1fr;
+  }
+  .blueprint-summary-metrics {
+    grid-template-columns: 1fr;
   }
 }
