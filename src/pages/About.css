@@ -1,0 +1,242 @@
+/* ============================================================
+   Gold Star — About Page Styling
+   ============================================================ */
+
+.about-page {
+  padding-bottom: 80px;
+}
+
+/* ── Hero ── */
+.about-hero {
+  padding: calc(var(--nav-h) + 80px) 0 80px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.about-hero h1 {
+  font-size: clamp(3rem, 6vw, 5rem);
+  margin-top: 16px;
+  color: var(--ink);
+}
+
+.about-mission {
+  font-family: var(--font-body);
+  font-size: clamp(1.2rem, 2.2vw, 1.65rem);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--soft);
+  max-width: 860px;
+  margin-top: 24px;
+}
+
+/* ── Story Section ── */
+.story-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+.story-left h2 {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+.story-left p, .story-right p {
+  font-size: 1.1rem;
+  color: var(--soft);
+  line-height: 1.7;
+}
+
+.story-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.story-shape-visual {
+  height: 140px;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-card);
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.story-shape-item {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--gold-light);
+  opacity: 0.3;
+  box-shadow: 0 0 40px rgba(201, 168, 76, 0.4);
+}
+
+/* ── Values Grid ── */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.value-card {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  padding: 36px;
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.value-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--gold);
+  box-shadow: 0 16px 40px rgba(201, 168, 76, 0.06);
+}
+
+.value-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-card);
+  background-color: var(--bg-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.value-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+
+.value-card p {
+  font-size: 0.95rem;
+  color: var(--soft);
+  line-height: 1.6;
+}
+
+/* ── Team Grid ── */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+}
+
+.team-card {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  padding: 32px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform var(--transition);
+}
+
+.team-card:hover {
+  transform: translateY(-4px);
+}
+
+.team-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--bg-alt);
+  border: 2px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.team-avatar span {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--gold);
+}
+
+.team-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.team-card p {
+  font-size: 0.88rem;
+  color: var(--soft);
+  font-weight: 500;
+}
+
+/* ── Work CTA Band ── */
+.about-cta {
+  padding-top: 80px;
+}
+
+.work-cta-band {
+  background-color: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 80px 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.work-cta-band h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  color: var(--ink);
+  max-width: 600px;
+}
+
+.work-cta-band p {
+  font-size: 1.1rem;
+  color: var(--soft);
+  max-width: 480px;
+  margin-bottom: 12px;
+}
+
+/* ── Responsive Spacing ── */
+@media (max-width: 1024px) {
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 900px) {
+  .story-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+}

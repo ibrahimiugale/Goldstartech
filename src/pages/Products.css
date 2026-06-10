@@ -1,0 +1,153 @@
+/* ============================================================
+   Gold Star — Products Page Styling
+   ============================================================ */
+
+.products-page {
+  padding-bottom: 80px;
+}
+
+/* ── Hero ── */
+.products-hero {
+  padding: calc(var(--nav-h) + 80px) 0 80px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.products-hero h1 {
+  font-size: clamp(3rem, 6vw, 5rem);
+  margin-top: 16px;
+  color: var(--ink);
+}
+
+.products-subtext {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--soft);
+  max-width: 720px;
+  margin-top: 24px;
+}
+
+/* ── Products List ── */
+.products-list-section {
+  padding: 80px 0;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.product-card {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+
+.product-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(201, 168, 76, 0.05);
+}
+
+.product-card-top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.product-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-card);
+  background-color: var(--bg-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+
+.product-card p {
+  font-size: 0.95rem;
+  color: var(--soft);
+  line-height: 1.6;
+  margin-bottom: 36px;
+  flex-grow: 1; /* Aligns buttons at bottom */
+}
+
+.product-action-link {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color var(--transition);
+}
+
+.product-card:hover .product-action-link {
+  color: var(--gold);
+}
+
+/* ── CTA Band ── */
+.products-cta {
+  padding-top: 40px;
+}
+
+.products-cta-band {
+  background-color: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 80px 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.products-cta-band h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  color: var(--ink);
+  max-width: 600px;
+}
+
+.products-cta-band p {
+  font-size: 1.1rem;
+  color: var(--soft);
+  max-width: 480px;
+  margin-bottom: 12px;
+}
+
+/* ── Responsive Spacing ── */
+@media (max-width: 990px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .product-card {
+    padding: 32px;
+  }
+}

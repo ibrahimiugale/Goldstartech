@@ -1,0 +1,193 @@
+/* ============================================================
+   Gold Star — Services Page Styling
+   ============================================================ */
+
+.services-page {
+  padding-bottom: 80px;
+}
+
+/* ── Hero ── */
+.services-hero {
+  padding: calc(var(--nav-h) + 80px) 0 80px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.services-hero h1 {
+  font-size: clamp(3rem, 6vw, 5rem);
+  margin-top: 16px;
+  color: var(--ink);
+}
+
+.services-subtext {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--soft);
+  max-width: 720px;
+  margin-top: 24px;
+}
+
+/* ── Services Detail List ── */
+.services-list-section {
+  padding: 40px 0;
+}
+
+.services-detail-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  padding: 100px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.services-detail-item:last-child {
+  border-bottom: none;
+}
+
+/* Alternating Layout */
+.reversed-layout .services-detail-visual {
+  order: 2;
+}
+
+.reversed-layout .services-detail-info {
+  order: 1;
+}
+
+/* Visual Block styling */
+.services-detail-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.services-visual-card {
+  width: 100%;
+  max-width: 440px;
+  height: 320px;
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.01);
+}
+
+.services-visual-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at bottom left, rgba(201, 168, 76, 0.1), transparent 60%);
+}
+
+.services-visual-accent {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-card);
+  background-color: var(--bg-alt);
+  border: 2px dashed var(--gold);
+}
+
+.services-visual-number {
+  position: absolute;
+  bottom: 24px;
+  right: 40px;
+  font-family: var(--font-display);
+  font-size: 8rem;
+  font-weight: 800;
+  color: var(--bg-alt);
+  line-height: 0.8;
+  user-select: none;
+}
+
+/* Info styling */
+.services-tag-row {
+  margin-bottom: 24px;
+}
+
+.tag-icon-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--white);
+}
+
+.services-detail-info h2 {
+  font-size: clamp(2rem, 3.5vw, 2.6rem);
+  color: var(--ink);
+  margin-bottom: 20px;
+}
+
+.services-detail-desc {
+  font-size: 1.05rem;
+  color: var(--soft);
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.services-detail-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.services-detail-bullets li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 1.05rem;
+  color: var(--ink);
+}
+
+/* ── Bottom CTA ── */
+.services-cta {
+  padding-top: 60px;
+}
+
+.services-cta-band {
+  background-color: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 80px 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.services-cta-band h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  color: var(--ink);
+  max-width: 600px;
+}
+
+.services-cta-band p {
+  font-size: 1.1rem;
+  color: var(--soft);
+  max-width: 480px;
+  margin-bottom: 12px;
+}
+
+/* ── Responsive Spacing ── */
+@media (max-width: 900px) {
+  .services-detail-item {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 60px 0;
+  }
+  
+  .reversed-layout .services-detail-visual {
+    order: 0;
+  }
+
+  .reversed-layout .services-detail-info {
+    order: 0;
+  }
+}
