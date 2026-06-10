@@ -30,6 +30,8 @@ export default function Home() {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) return;
 
+    if (!heroBadgeRef.current || !heroTitleRef.current || !heroSubRef.current || !heroBtnRef.current || !heroVisualRef.current) return;
+
     const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
     
     tl.fromTo(heroBadgeRef.current, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6 })
@@ -39,9 +41,9 @@ export default function Home() {
       .fromTo(heroVisualRef.current, { opacity: 0, scale: 0.92 }, { opacity: 1, scale: 1, duration: 0.8 }, '-=0.55');
 
     // Continuous Orbit Ring Rotations (different speeds & directions)
-    gsap.to(ring1Ref.current, { rotation: 360, duration: 25, repeat: -1, ease: 'none' });
-    gsap.to(ring2Ref.current, { rotation: -360, duration: 35, repeat: -1, ease: 'none' });
-    gsap.to(ring3Ref.current, { rotation: 360, duration: 45, repeat: -1, ease: 'none' });
+    if (ring1Ref.current) gsap.to(ring1Ref.current, { rotation: 360, duration: 25, repeat: -1, ease: 'none' });
+    if (ring2Ref.current) gsap.to(ring2Ref.current, { rotation: -360, duration: 35, repeat: -1, ease: 'none' });
+    if (ring3Ref.current) gsap.to(ring3Ref.current, { rotation: 360, duration: 45, repeat: -1, ease: 'none' });
 
   }, []);
 
@@ -50,7 +52,9 @@ export default function Home() {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) return;
 
+    if (!statsRef.current) return;
     const statsElements = statsRef.current.querySelectorAll('.stat-number');
+    if (statsElements.length === 0) return;
     
     statsElements.forEach((el) => {
       const target = parseInt(el.getAttribute('data-target'), 10);
@@ -80,6 +84,8 @@ export default function Home() {
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) return;
+
+    if (!ctaBandRef.current) return;
 
     gsap.fromTo(ctaBandRef.current,
       { scale: 0.94, opacity: 0 },
