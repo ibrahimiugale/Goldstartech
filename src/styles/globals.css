@@ -2,7 +2,7 @@
    Gold Star — Design Tokens & Global Stylesheet
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Plus+Jakarta+Sans:wght@700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Inter:wght@400;500&display=swap');
 
 :root {
   /* Colors */
@@ -16,7 +16,7 @@
   --white: #FFFFFF;
   
   /* Fonts */
-  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-display: 'Bricolage Grotesque', sans-serif;
   --font-body: 'Inter', sans-serif;
 
   /* Spacing */
