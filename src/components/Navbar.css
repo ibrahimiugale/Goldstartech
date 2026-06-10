@@ -249,3 +249,55 @@
   justify-content: center;
   margin-top: 12px;
 }
+
+/* ── Nav Actions Flex ── */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  z-index: 1002;
+}
+
+/* ── Theme Toggles ── */
+.theme-toggle-btn {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--soft);
+  cursor: pointer;
+  transition: var(--transition);
+  outline: none;
+}
+
+.theme-toggle-btn:hover {
+  color: var(--gold);
+  border-color: var(--gold);
+  box-shadow: 0 0 10px rgba(201, 168, 76, 0.2);
+}
+
+.mobile-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--ink);
+  cursor: pointer;
+  transition: var(--transition);
+  width: max-content;
+}
+
+.mobile-theme-toggle:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}

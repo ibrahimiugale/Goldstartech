@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
-import { Star, Menu, X, ChevronDown } from 'lucide-react';
+import { Star, Menu, X, ChevronDown, Sun, Moon } from 'lucide-react';
 import { gsap } from 'gsap';
 import './Navbar.css';
 
@@ -8,6 +8,20 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  
+  // Theme state defaulting to dark
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem('theme') || 'dark';
+  });
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('light-theme', theme === 'light');
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+  };
   
   const navRef = useRef(null);
   const dropdownRef = useRef(null);
@@ -102,6 +116,14 @@ export default function Navbar() {
 
         {/* Action Button */}
         <div className="nav-actions">
+          <button 
+            type="button"
+            className="theme-toggle-btn"
+            onClick={toggleTheme}
+            aria-label="Toggle Theme"
+          >
+            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
           <Link to="/contact" className="btn btn-primary btn-sm">Start a Project</Link>
         </div>
 
@@ -136,6 +158,28 @@ export default function Navbar() {
             <NavLink to="/products" className="mobile-link" onClick={() => setIsMobileOpen(false)}>Products</NavLink>
             <NavLink to="/blog" className="mobile-link" onClick={() => setIsMobileOpen(false)}>Blog</NavLink>
             <NavLink to="/contact" className="mobile-link" onClick={() => setIsMobileOpen(false)}>Contact</NavLink>
+            
+            <div className="mobile-sub-group">
+              <span className="mobile-sub-title">Theme</span>
+              <button 
+                type="button" 
+                onClick={toggleTheme} 
+                className="mobile-theme-toggle"
+              >
+                {theme === 'dark' ? (
+                  <>
+                    <Sun size={16} />
+                    <span>Light Mode</span>
+                  </>
+                ) : (
+                  <>
+                    <Moon size={16} />
+                    <span>Dark Mode</span>
+                  </>
+                )}
+              </button>
+            </div>
+            
             <Link to="/contact" className="btn btn-primary mobile-cta-btn" onClick={() => setIsMobileOpen(false)}>Start a Project</Link>
           </div>
         </div>
