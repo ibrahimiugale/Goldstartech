@@ -5,6 +5,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import useReveal from '../utils/useReveal';
 import liquidGold from '../assets/liquid_gold.png';
+import goldStandardBadge from '../assets/gold_standard_badge.png';
 import './Home.css';
 
 // Register ScrollTrigger
@@ -732,12 +733,9 @@ export default function Home() {
         <div className="container why-container">
           {/* Left Visual block */}
           <div className="why-visual-block reveal">
+            <img src={goldStandardBadge} alt="Gold Standard Emblem" className="why-visual-img" />
             <div className="why-visual-inner">
               <span className="why-badge">★ GOLD STANDARD</span>
-              <div className="geometric-pattern">
-                <div className="geo-circle"></div>
-                <div className="geo-square"></div>
-              </div>
             </div>
           </div>
 

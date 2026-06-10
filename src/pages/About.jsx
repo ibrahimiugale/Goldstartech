@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Zap, Eye, Shield, Target } from 'lucide-react';
 import useReveal from '../utils/useReveal';
+import startupStoryVisual from '../assets/startup_story_visual.png';
 import './About.css';
 
 export default function About() {
@@ -66,7 +67,7 @@ export default function About() {
               We assembled a lean, world-class team of developers, automation experts, and growth marketers to ship products at warp speed. By applying the 80/20 rule, we focus only on elements that deliver maximum visual and performance impact.
             </p>
             <div className="story-shape-visual">
-              <div className="story-shape-item"></div>
+              <img src={startupStoryVisual} alt="Startup team visual" className="story-visual-img" />
             </div>
           </div>
         </div>
