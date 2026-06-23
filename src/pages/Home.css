@@ -1029,3 +1029,322 @@
     padding: 60px 24px;
   }
 }
+
+/* ── Tech Stack Marquee ── */
+.tech-marquee-section {
+  padding: 40px 0;
+  background-color: var(--alt-bg);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+  position: relative;
+}
+
+.tech-logo-svg {
+  width: 24px;
+  height: 24px;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+/* ── Tools & Infrastructure Section ── */
+.tools-infra-section {
+  padding: 100px 0;
+  background-color: #050508;
+  color: #ffffff;
+  border-top: 1px solid #1a1a24;
+  border-bottom: 1px solid #1a1a24;
+  position: relative;
+  overflow: hidden;
+}
+
+.tools-infra-section::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(220, 38, 38, 0.08) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.tools-infra-container {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 80px;
+  position: relative;
+  z-index: 2;
+}
+
+.tools-infra-left {
+  position: sticky;
+  top: 120px;
+  align-self: start;
+}
+
+.tools-infra-left h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #ffffff;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.kyno-logo-container {
+  margin-top: 40px;
+}
+
+.kyno-logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+.kyno-logo .logo-accent {
+  color: #ff3b30;
+}
+
+.tools-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.tool-item {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #1a1a24;
+  transition: border-color 0.3s ease;
+}
+
+.tool-item:hover {
+  border-color: rgba(255, 59, 48, 0.4);
+}
+
+.tool-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ff453a; /* Light red/coral shade */
+}
+
+.tool-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #a1a1aa;
+}
+
+/* ── Case Studies Section ── */
+.case-studies-section {
+  padding: 120px 0;
+  background-color: #0b0b0f;
+  color: #ffffff;
+  position: relative;
+}
+
+.case-studies-section::before {
+  content: '';
+  position: absolute;
+  bottom: -10%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(220, 38, 38, 0.06) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.align-left {
+  text-align: left !important;
+  margin-bottom: 60px;
+}
+
+.align-left h2 {
+  color: #ffffff;
+}
+
+.cases-list {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.case-card {
+  background-color: #121218;
+  border: 1px solid #222230;
+  border-radius: 16px;
+  padding: 48px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.case-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 59, 48, 0.3);
+}
+
+.case-top-tag {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+}
+
+.case-top-tag .kyno-logo {
+  font-size: 1.15rem;
+  opacity: 0.8;
+}
+
+.case-content-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.case-eyebrow {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #ff453a;
+  margin-bottom: 12px;
+}
+
+.case-card h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.case-summary {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #d1d1d6;
+  margin-bottom: 36px;
+}
+
+.case-details-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  border-top: 1px solid #222230;
+  padding-top: 30px;
+}
+
+.detail-block h5 {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.detail-block p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #8e8e93;
+}
+
+/* Comparison Table */
+.case-table-col {
+  width: 100%;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Inter', sans-serif;
+  background-color: #0b0b0f;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 20px 24px;
+  text-align: left;
+}
+
+.comparison-table th {
+  background-color: #161622;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ffffff;
+  border-bottom: 2px solid #222230;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.table-badge {
+  display: inline-block;
+  background-color: rgba(255, 59, 48, 0.15);
+  color: #ff453a;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.comparison-table tr:not(:last-child) {
+  border-bottom: 1px solid #1c1c28;
+}
+
+.metric-name {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.before-val {
+  color: #8e8e93;
+}
+
+.after-val {
+  font-weight: 700;
+}
+
+.highlighted-val {
+  color: #30d158; /* Green for success metric improvement */
+  text-shadow: 0 0 10px rgba(48, 209, 88, 0.15);
+}
+
+@media (max-width: 991px) {
+  .tools-infra-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .tools-infra-left {
+    position: static;
+  }
+  
+  .case-content-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+

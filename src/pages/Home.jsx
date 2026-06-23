@@ -428,26 +428,112 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── CLIENT MARQUEE SECTION ── */}
-      <section className="marquee-section">
-        <p className="marquee-eyebrow">TRUSTED BY FORWARD-THINKING BRANDS</p>
+      {/* ── TECH STACK MARQUEE SECTION ── */}
+      <section className="tech-marquee-section">
         <div className="marquee-container">
           <div className="marquee-track">
-            <span>Iugale Systems</span>
-            <span>Aura Tech</span>
-            <span>Nova Analytics</span>
-            <span>Pulse Digital</span>
-            <span>Sphere Software</span>
-            <span>Vertex AI</span>
-            <span>Quantum Labs</span>
+            {/* n8n */}
+            <div className="marquee-item">
+              <svg className="tech-logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M9 12h6M15 12V5.5M15 12v6.5"/></svg>
+              <span>n8n</span>
+            </div>
+            {/* zapier */}
+            <div className="marquee-item">
+              <svg className="tech-logo-svg" viewBox="0 0 24 24" fill="#FF4A00"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07L19.07 4.93" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/></svg>
+              <span>zapier</span>
+            </div>
+            {/* make */}
+            <div className="marquee-item">
+              <svg className="tech-logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M4 12a8 8 0 0 1 8-8c2.2 0 4.2.9 5.6 2.4M20 12a8 8 0 0 1-8 8c-2.2 0-4.2-.9-5.6-2.4"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg>
+              <span>make</span>
+            </div>
+            {/* OpenAI */}
+            <div className="marquee-item">
+              <svg className="tech-logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M4.5 10.5C3.5 9 3.5 7 4.5 5.5s3-2 4.5-1.5M19.5 13.5c1 1.5 1 3.5 0 5s-3 2-4.5 1.5M19.5 10.5c1-1.5 1-3.5 0-5s-3-2-4.5-1.5M4.5 13.5c-1 1.5-1 3.5 0 5s3 2 4.5 1.5M12 3v18M3 12h18"/></svg>
+              <span>OpenAI</span>
+            </div>
+            {/* Gemini */}
+            <div className="marquee-item">
+              <svg className="tech-logo-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c0 4.97-4.03 9-9 9 4.97 0 9 4.03 9 9 0-4.97 4.03-9 9-9-4.97 0-9-4.03-9-9z"/></svg>
+              <span>Gemini</span>
+            </div>
+            {/* ElevenLabs */}
+            <div className="marquee-item">
+              <svg className="tech-logo-svg" viewBox="0 0 24 24" fill="currentColor"><rect x="5" y="3" width="4" height="18" rx="2"/><rect x="15" y="3" width="4" height="18" rx="2"/></svg>
+              <span>ElevenLabs</span>
+            </div>
+            {/* Pinecone */}
+            <div className="marquee-item">
+              <svg className="tech-logo-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l-5 6h10zm0 5l-7 8h14zm0 6l-9 9h18z"/></svg>
+              <span>Pinecone</span>
+            </div>
+            {/* PostgreSQL */}
+            <div className="marquee-item">
+              <svg className="tech-logo-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-10 10c0 4.13 2.5 7.69 6.06 9.22.47-.88.94-1.78 1.4-2.69-.96-.4-1.85-.98-2.65-1.71a8.03 8.03 0 0 1-1.81-8.31c.88-2.88 3.57-4.51 6.5-4.51s5.62 1.63 6.5 4.51a8.03 8.03 0 0 1-1.81 8.31c-.8.73-1.69 1.31-2.65 1.71.46.91.93 1.81 1.4 2.69A10.01 10.01 0 0 0 22 12 10 10 0 0 0 12 2z"/></svg>
+              <span>PostgreSQL</span>
+            </div>
+            {/* node */}
+            <div className="marquee-item">
+              <svg className="tech-logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2L2 7.7v8.6L12 22l10-5.7V7.7L12 2z"/><path d="M12 22V12m0 0L2 7.7M12 12l10-4.3"/></svg>
+              <span>node</span>
+            </div>
+            {/* python */}
+            <div className="marquee-item">
+              <svg className="tech-logo-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c-2.76 0-5 2.24-5 5v2h5v1H5c-1.66 0-3 1.34-3 3v5c0 1.66 1.34 3 3 3h2c1.66 0 3-1.34 3-3v-2h-5v-1h7c1.66 0 3-1.34 3-3v-5c0-2.76-2.24-5-5-5zm-2.5 3c.83 0 1.5.67 1.5 1.5S10.33 8 9.5 8 8 7.33 8 6.5 8.67 5 9.5 5zm5 14c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+              <span>python</span>
+            </div>
+
             {/* Duplicate for infinite loop */}
-            <span>Iugale Systems</span>
-            <span>Aura Tech</span>
-            <span>Nova Analytics</span>
-            <span>Pulse Digital</span>
-            <span>Sphere Software</span>
-            <span>Vertex AI</span>
-            <span>Quantum Labs</span>
+            {/* n8n */}
+            <div className="marquee-item">
+              <svg className="tech-logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M9 12h6M15 12V5.5M15 12v6.5"/></svg>
+              <span>n8n</span>
+            </div>
+            {/* zapier */}
+            <div className="marquee-item">
+              <svg className="tech-logo-svg" viewBox="0 0 24 24" fill="#FF4A00"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07L19.07 4.93" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/></svg>
+              <span>zapier</span>
+            </div>
+            {/* make */}
+            <div className="marquee-item">
+              <svg className="tech-logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M4 12a8 8 0 0 1 8-8c2.2 0 4.2.9 5.6 2.4M20 12a8 8 0 0 1-8 8c-2.2 0-4.2-.9-5.6-2.4"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg>
+              <span>make</span>
+            </div>
+            {/* OpenAI */}
+            <div className="marquee-item">
+              <svg className="tech-logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M4.5 10.5C3.5 9 3.5 7 4.5 5.5s3-2 4.5-1.5M19.5 13.5c1 1.5 1 3.5 0 5s-3 2-4.5 1.5M19.5 10.5c1-1.5 1-3.5 0-5s-3-2-4.5-1.5M4.5 13.5c-1 1.5-1 3.5 0 5s3 2 4.5 1.5M12 3v18M3 12h18"/></svg>
+              <span>OpenAI</span>
+            </div>
+            {/* Gemini */}
+            <div className="marquee-item">
+              <svg className="tech-logo-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c0 4.97-4.03 9-9 9 4.97 0 9 4.03 9 9 0-4.97 4.03-9 9-9-4.97 0-9-4.03-9-9z"/></svg>
+              <span>Gemini</span>
+            </div>
+            {/* ElevenLabs */}
+            <div className="marquee-item">
+              <svg className="tech-logo-svg" viewBox="0 0 24 24" fill="currentColor"><rect x="5" y="3" width="4" height="18" rx="2"/><rect x="15" y="3" width="4" height="18" rx="2"/></svg>
+              <span>ElevenLabs</span>
+            </div>
+            {/* Pinecone */}
+            <div className="marquee-item">
+              <svg className="tech-logo-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l-5 6h10zm0 5l-7 8h14zm0 6l-9 9h18z"/></svg>
+              <span>Pinecone</span>
+            </div>
+            {/* PostgreSQL */}
+            <div className="marquee-item">
+              <svg className="tech-logo-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-10 10c0 4.13 2.5 7.69 6.06 9.22.47-.88.94-1.78 1.4-2.69-.96-.4-1.85-.98-2.65-1.71a8.03 8.03 0 0 1-1.81-8.31c.88-2.88 3.57-4.51 6.5-4.51s5.62 1.63 6.5 4.51a8.03 8.03 0 0 1-1.81 8.31c-.8.73-1.69 1.31-2.65 1.71.46.91.93 1.81 1.4 2.69A10.01 10.01 0 0 0 22 12 10 10 0 0 0 12 2z"/></svg>
+              <span>PostgreSQL</span>
+            </div>
+            {/* node */}
+            <div className="marquee-item">
+              <svg className="tech-logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2L2 7.7v8.6L12 22l10-5.7V7.7L12 2z"/><path d="M12 22V12m0 0L2 7.7M12 12l10-4.3"/></svg>
+              <span>node</span>
+            </div>
+            {/* python */}
+            <div className="marquee-item">
+              <svg className="tech-logo-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c-2.76 0-5 2.24-5 5v2h5v1H5c-1.66 0-3 1.34-3 3v5c0 1.66 1.34 3 3 3h2c1.66 0 3-1.34 3-3v-2h-5v-1h7c1.66 0 3-1.34 3-3v-5c0-2.76-2.24-5-5-5zm-2.5 3c.83 0 1.5.67 1.5 1.5S10.33 8 9.5 8 8 7.33 8 6.5 8.67 5 9.5 5zm5 14c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+              <span>python</span>
+            </div>
           </div>
         </div>
       </section>
@@ -542,6 +628,215 @@ export default function Home() {
               <Link to="/services/ai-search-aeo-geo" className="service-link">
                 Learn more <ArrowRight size={14} />
               </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── TOOLS & INFRASTRUCTURE SECTION ── */}
+      <section className="tools-infra-section">
+        <div className="container tools-infra-container">
+          <div className="tools-infra-left">
+            <span className="section-badge">STACK & APIS</span>
+            <h2>Tools & Infrastructure</h2>
+            <div className="kyno-logo-container">
+              <span className="kyno-logo">kyno<span className="logo-accent">AI</span></span>
+            </div>
+          </div>
+          <div className="tools-infra-right">
+            <div className="tools-list">
+              <div className="tool-item">
+                <span className="tool-name">n8n</span>
+                <span className="tool-desc">Workflow automation platform</span>
+              </div>
+              <div className="tool-item">
+                <span className="tool-name">Zapier</span>
+                <span className="tool-desc">App integration tool</span>
+              </div>
+              <div className="tool-item">
+                <span className="tool-name">Make</span>
+                <span className="tool-desc">Visual automation builder</span>
+              </div>
+              <div className="tool-item">
+                <span className="tool-name">OpenAI API</span>
+                <span className="tool-desc">Language model & reasoning</span>
+              </div>
+              <div className="tool-item">
+                <span className="tool-name">Gemini API</span>
+                <span className="tool-desc">Multimodal AI understanding</span>
+              </div>
+              <div className="tool-item">
+                <span className="tool-name">ElevenLabs</span>
+                <span className="tool-desc">Voice synthesis & cloning</span>
+              </div>
+              <div className="tool-item">
+                <span className="tool-name">SIP Trunking</span>
+                <span className="tool-desc">Real-time call routing</span>
+              </div>
+              <div className="tool-item">
+                <span className="tool-name">Vector Databases - Pinecone</span>
+                <span className="tool-desc">Semantic data search</span>
+              </div>
+              <div className="tool-item">
+                <span className="tool-name">Custom AI Agents</span>
+                <span className="tool-desc">Decision-making automation</span>
+              </div>
+              <div className="tool-item">
+                <span className="tool-name">Speech-to-Text / TTS</span>
+                <span className="tool-desc">Conversational AI interface</span>
+              </div>
+              <div className="tool-item">
+                <span className="tool-name">OCR + NLP Pipelines</span>
+                <span className="tool-desc">Document data extraction</span>
+              </div>
+              <div className="tool-item">
+                <span className="tool-name">Third-party APIs</span>
+                <span className="tool-desc">Bookings, maps, CRMs</span>
+              </div>
+              <div className="tool-item">
+                <span className="tool-name">CRM / ERP Integrations</span>
+                <span className="tool-desc">System data sync</span>
+              </div>
+              <div className="tool-item">
+                <span className="tool-name">Serverless Infrastructure (AWS/Cloud Run)</span>
+                <span className="tool-desc">Scalable AI execution</span>
+              </div>
+              <div className="tool-item">
+                <span className="tool-name">Node.js / Python</span>
+                <span className="tool-desc">Backend frameworks</span>
+              </div>
+              <div className="tool-item">
+                <span className="tool-name">Secure REST APIs</span>
+                <span className="tool-desc">Data communication layer</span>
+              </div>
+              <div className="tool-item">
+                <span className="tool-name">GDPR-Compliant Hosting</span>
+                <span className="tool-desc">Data privacy & compliance</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── FEATURED CASE STUDIES SECTION ── */}
+      <section className="case-studies-section">
+        <div className="container">
+          <div className="section-header align-left">
+            <span className="section-badge">CASE STUDIES</span>
+            <h2>Proven Transformations</h2>
+          </div>
+
+          <div className="cases-list">
+            {/* Case Study 1 */}
+            <div className="case-card">
+              <div className="case-top-tag">
+                <span className="kyno-logo">kyno<span className="logo-accent">AI</span></span>
+              </div>
+              <div className="case-content-grid">
+                <div className="case-text-col">
+                  <span className="case-eyebrow">AI-Based Extraction & Categorization</span>
+                  <h3>Smart Invoice Processing</h3>
+                  <p className="case-summary">
+                    Automates invoice data extraction and categorization for a European SMB's global supply chain.
+                  </p>
+                  
+                  <div className="case-details-row">
+                    <div className="detail-block">
+                      <h5>Problem / Opportunity</h5>
+                      <p>Manual processing took 2 full days, higher error rates, and delayed insights.</p>
+                    </div>
+                    <div className="detail-block">
+                      <h5>Solution</h5>
+                      <p>AI extracts and classifies line items (logistics, electricity, etc.) and identifies true product costs.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="case-table-col">
+                  <table className="comparison-table">
+                    <thead>
+                      <tr>
+                        <th>Metric</th>
+                        <th>Before</th>
+                        <th>After <span className="table-badge">AI-Based OCR</span></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td className="metric-name">Time</td>
+                        <td className="before-val">2 days</td>
+                        <td className="after-val highlighted-val">15 mins</td>
+                      </tr>
+                      <tr>
+                        <td className="metric-name">Accuracy</td>
+                        <td className="before-val">95-97%</td>
+                        <td className="after-val highlighted-val">~99.5%</td>
+                      </tr>
+                      <tr>
+                        <td className="metric-name">Effort</td>
+                        <td className="before-val">Fully manual</td>
+                        <td className="after-val highlighted-val">Fully automated</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            {/* Case Study 2 */}
+            <div className="case-card">
+              <div className="case-top-tag">
+                <span className="kyno-logo">kyno<span className="logo-accent">AI</span></span>
+              </div>
+              <div className="case-content-grid">
+                <div className="case-text-col">
+                  <span className="case-eyebrow">AI Author</span>
+                  <h3>Personalized Book Creation</h3>
+                  <p className="case-summary">
+                    Transforms personalized book creation - from 10 days to under 30 minutes - by automating writing, editing, formatting, and printing.
+                  </p>
+                  
+                  <div className="case-details-row">
+                    <div className="detail-block">
+                      <h5>Problem / Opportunity</h5>
+                      <p>Authors can spend their time refining the book instead of building it end-to-end.</p>
+                    </div>
+                    <div className="detail-block">
+                      <h5>Solution</h5>
+                      <p>AI Author handles end-to-end creation via customer input forms and automated pipelines with human in the loop.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="case-table-col">
+                  <table className="comparison-table">
+                    <thead>
+                      <tr>
+                        <th>Metric</th>
+                        <th>Before</th>
+                        <th>After <span className="table-badge">AI Author</span></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td className="metric-name">Time</td>
+                        <td className="before-val">7-10 days</td>
+                        <td className="after-val highlighted-val">&lt; 30 mins</td>
+                      </tr>
+                      <tr>
+                        <td className="metric-name">Cost</td>
+                        <td className="before-val">~£25+</td>
+                        <td className="after-val highlighted-val">~£3</td>
+                      </tr>
+                      <tr>
+                        <td className="metric-name">Workforce</td>
+                        <td className="before-val">Human Authors</td>
+                        <td className="after-val highlighted-val">AI Authors</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </div>
           </div>
         </div>

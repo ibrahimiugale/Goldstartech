@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Zap, Eye, Shield, Target } from 'lucide-react';
+import { GitMerge, Mic, Database, Brain, GitFork } from 'lucide-react';
 import useReveal from '../utils/useReveal';
 import startupStoryVisual from '../assets/startup_story_visual.png';
 import './About.css';
@@ -8,26 +8,31 @@ import './About.css';
 export default function About() {
   useReveal();
 
-  const values = [
+  const capabilities = [
     {
-      icon: <Zap size={24} color="var(--gold)" />,
-      title: 'Speed',
-      desc: 'We launch functional products in weeks, not quarters. Momentum is our strategy.'
+      icon: <GitMerge size={28} color="#ff453a" />,
+      title: 'End-to-end',
+      subtitle: 'AI Automation'
     },
     {
-      icon: <Eye size={24} color="var(--gold)" />,
-      title: 'Transparency',
-      desc: 'Direct channels. Shared Slack. Open pipelines. You see what we see.'
+      icon: <Mic size={28} color="#ff453a" />,
+      title: 'Voice AI and',
+      subtitle: 'Conversational AI'
     },
     {
-      icon: <Target size={24} color="var(--gold)" />,
-      title: 'Results',
-      desc: 'We map every line of code and campaign directly to revenue indicators.'
+      icon: <Database size={28} color="#ff453a" />,
+      title: 'Business Intelligence',
+      subtitle: 'and Data Extraction'
     },
     {
-      icon: <Shield size={24} color="var(--gold)" />,
-      title: 'Innovation',
-      desc: 'Active execution of AI agent workflows that drive structural advantages.'
+      icon: <Brain size={28} color="#ff453a" />,
+      title: 'Personalized Learning',
+      subtitle: 'and Content Generation'
+    },
+    {
+      icon: <GitFork size={28} color="#ff453a" />,
+      title: 'AI-driven',
+      subtitle: 'decision systems'
     }
   ];
 
@@ -41,14 +46,40 @@ export default function About() {
 
   return (
     <div className="about-page">
-      {/* ── HERO SECTION ── */}
-      <section className="about-hero">
-        <div className="container">
-          <span className="tag tag-gold reveal">OUR MISSION</span>
-          <h1 className="reveal">We're Gold Star.</h1>
-          <p className="about-mission reveal">
-            We partner with high-growth startups and enterprises to build premium software, automate complex operations, and drive market-leading digital marketing outcomes.
-          </p>
+      {/* ── HERO & CAPABILITIES SECTION (DARK BLOCK) ── */}
+      <section className="about-hero-dark">
+        <div className="container about-hero-container">
+          <div className="about-header-top">
+            <div className="kyno-logo-top">
+              <span className="kyno-logo">kyno<span className="logo-accent">AI</span></span>
+            </div>
+            <h1>About Us</h1>
+            <p className="about-desc-large">
+              We build intelligent automation systems that complement existing processes, increasing efficiency while giving teams more time to upskill and take on more meaningful responsibilities.
+            </p>
+          </div>
+
+          <div className="about-mission-block">
+            <p className="mission-highlight">
+              Our Mission is to make Artificial Intelligence <strong className="bold-white">Practical, Measurable, and Transformative</strong> for every business.
+            </p>
+          </div>
+
+          <div className="capabilities-row stagger-group">
+            {capabilities.map((c, idx) => (
+              <div key={idx} className="capability-item stagger-item">
+                <div className="capability-circle-wrapper">
+                  <div className="capability-circle">
+                    {c.icon}
+                  </div>
+                </div>
+                <div className="capability-label">
+                  <span>{c.title}</span>
+                  <span>{c.subtitle}</span>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -69,29 +100,6 @@ export default function About() {
             <div className="story-shape-visual">
               <img src={startupStoryVisual} alt="Startup team visual" className="story-visual-img" />
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── VALUES SECTION ── */}
-      <section className="section values-section">
-        <div className="container">
-          <div className="section-header reveal">
-            <span className="section-badge">CORE VALUES</span>
-            <h2>What drives us.</h2>
-            <p>We work under a strict set of operating principles to guarantee consistency and engineering excellence.</p>
-          </div>
-
-          <div className="values-grid stagger-group">
-            {values.map((v, idx) => (
-              <div key={idx} className="value-card stagger-item">
-                <div className="value-icon-wrapper">
-                  {v.icon}
-                </div>
-                <h3>{v.title}</h3>
-                <p>{v.desc}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
